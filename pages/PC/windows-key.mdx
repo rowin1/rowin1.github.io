@@ -1,0 +1,27 @@
+## How to Disable or Enable the Windows Key
+
+### To **disable** the Windows key:
+
+1. Click **Start**, click **Run**, type `regedt32`, and then click **OK**.
+2. In the Registry Editor, navigate to:  
+   `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout`
+3. On the **Edit** menu, click **Add Value**:
+   - Name: `Scancode Map`
+   - Data Type: `REG_BINARY`
+   - Data:  
+     ```
+     00000000 00000000 03000000 00005BE0 00005CE0 00000000
+     ```
+4. Click **OK**.
+5. Close the Registry Editor and **restart** your computer.
+
+---
+
+### To **enable** the Windows key (undo the change):
+
+1. Click **Start**, click **Run**, type `regedt32`, and then click **OK**.
+2. Navigate to:  
+   `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout`
+3. Right-click the `Scancode Map` registry entry and click **Delete**.
+4. Confirm by clicking **Yes**.
+5. Close the Registry Editor and **restart** your computer.
